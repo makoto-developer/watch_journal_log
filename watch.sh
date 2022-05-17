@@ -32,6 +32,7 @@ hit_action() {
                 #echo "$ip is blocked"
                 iptables -A INPUT -s $ip -j DROP
                 service iptables save
+                systemctl restart iptables
             fi
         fi
     done
