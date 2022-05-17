@@ -16,7 +16,10 @@ hit_action() {
     while read i
     do
         echo $i| grep -q $conditions_1
-        if [ $? = "0" ];then
+        check1=$?
+        echo $i| grep -q $conditions_2
+        check2=$?
+        if [ check1 = "0" ] || [ check2 = "0" ] ;then
             ip=`echo $i | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+' | grep -o [0-9].*`
 
             # 特定のIPは除外
