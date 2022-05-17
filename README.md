@@ -27,7 +27,7 @@ systemctl status iptables
 ./watch_run.sh
 ```
 
-# 特定のIPは除外したい場合:w
+# 特定のIPは除外したい場合
 
 以下のファイルにIPアドレスを追加してください。
 
