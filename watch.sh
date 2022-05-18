@@ -4,7 +4,7 @@ TARGET_LOG="./journal.log"
 # IPブロックリスト
 LIST="./block_ip_list.txt"
 # IPブロック除外リスト
-LIST_EXCLUDED="./block_ip_exculede_list.txt"
+LIST_EXCLUDED="./block_ip_excluded_list.txt"
 
 # sshに対するエラーワード
 conditions_1="Invalid"

@@ -1,5 +1,5 @@
 block_ip_list.txt
-block_ip_exculede_list.txt
+block_ip_excluded_list.txt
 journal.log
 journal_err.log
 watch.log

@@ -35,7 +35,7 @@ systemctl status iptables
 以下のファイルにIPアドレスを追加してください。
 
 ```zsh
-vi ./block_ip_exculede_list.txt
+vi ./block_ip_excluded_list.txt
 ```
 
 # ブロックしたIPを知りたい場合
