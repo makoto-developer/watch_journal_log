@@ -11,7 +11,7 @@ conditions_1="Invalid"
 conditions_2="Failed"
 
 # ログを監視して、追加されたらIPアドレスをブロック
-hit_action() {
+block_ip() {
   while read i; do
     echo $i | grep -q $conditions_1
     check1=$?
@@ -44,4 +44,4 @@ if [ ! -f ${TARGET_LOG} ]; then
   touch ${TARGET_LOG}
 fi
 
-tail -n 0 --follow=name --retry $TARGET_LOG | hit_action
+tail -n 0 --follow=name --retry $TARGET_LOG | block_ip
