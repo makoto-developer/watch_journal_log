@@ -4,7 +4,7 @@ TARGET_LOG="./journal.log"
 # IPブロックリスト
 LIST="./block_ip_list.txt"
 # IPブロック除外リスト
-LIST_EXCULED="./block_ip_exculede_list.txt"
+LIST_EXCLUDED="./block_ip_exculede_list.txt"
 
 # sshに対するエラーワード
 conditions_1="Invalid"
@@ -21,7 +21,7 @@ hit_action() {
       ip=$(echo $i | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+' | grep -o [0-9].*)
 
       # 特定のIPは除外
-      cat $LIST_EXCULED | grep -q $ip
+      cat $LIST_EXCLUDED | grep -q $ip
       if [ $? = "0" ]; then
         continue
       fi
