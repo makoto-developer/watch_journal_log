@@ -6,6 +6,7 @@ CentOS7用(Bash) ジャーナルログのsshdプロセスを監視して、不�
 
 - CentOS7で動作します。他のOSは動くかどうかわかりません(iptablesコマンドとjournalctlコマンドが使えればどのOSでも大丈夫そうだと思われる)。
 - iptablesを有効にしておいてください。
+- rootユーザで実行することを想定しています(systemctl restart iptablesを実行しているため)
 
 以下のコマンドで確認できるはずです。
 
