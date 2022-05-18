@@ -26,7 +26,7 @@ block_ip() {
         continue
       fi
 
-      # ブロック済みかチェック。ブロックする。
+      # ブロック済みかチェック。なければブロックする。
       cat $LIST | grep -q $ip
       if [ $? != "0" ]; then
         echo $ip >$LIST
