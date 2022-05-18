@@ -1,18 +1,12 @@
 # watch_journal_log
 
-CentOS7用(Bash) ジャーナルログのsshdプロセスを監視して、不正アクセスしてきたIPを即刻ブロックする(iptables drop)
+sshで不正アクセスしたIPを即刻ブロックする
 
 # 必要条件
 
 - CentOS7で動作します。他のOSは動くかどうかわかりません(iptablesコマンドとjournalctlコマンドが使えればどのOSでも大丈夫そうだと思われる)。
-- iptablesを有効にしておいてください。
+- journalctlとiptablesを有効にしておいてください。
 - rootユーザで実行することを想定しています(systemctl restart iptablesを実行しているため)
-
-以下のコマンドで確認できるはずです。
-
-```zsh
-systemctl status iptables
-```
 
 # 動かし方
 
@@ -24,7 +18,7 @@ systemctl status iptables
 ./watch_journal_run.sh
 ```
 
-## 2.↑の書き込まれたファイルを監視して、書き込まれたIPアドレスはiptables DROPさせる
+## 2.↑の書き込まれたファイルを監視する。特定のキーワードで引っかかったログを検知し、不正があったIPアドレスをiptables DROPさせる
 
 ```zsh
 ./watch_run.sh
@@ -50,5 +44,5 @@ vi ./block_ip_list.txt
 
 利用される場合は自己責任でお願いします。
 
+# コントリビュート歓迎
 修正が必要な箇所、改善プルリク歓迎しています。
-
